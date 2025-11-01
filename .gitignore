@@ -1,20 +1,28 @@
 # ========================
-# FreeCAD 项目忽略规则
-# 放在项目根目录，适用于所有子文件夹
+# FreeCAD 项目 .gitignore
+# 适用于多子文件夹结构，忽略自动备份和临时文件
 # ========================
 
-# 忽略 FreeCAD 自动生成的备份文件（所有层级）
+# FreeCAD 自动备份文件（关键！）
+**/*.FCBak
+
+# FreeCAD 手动/旧版备份（保留以防万一）
 **/*.FCStd1
 **/*.FCStd2
 **/*.bak
+
+# 临时与日志文件
 **/*.tmp
 **/*.log
 
-# 忽略缓存和中间文件（通常可重建）
+# 几何缓存（可重建，通常无需提交）
 **/*.brep
 **/*.xfc
-**/Shape2DView_*.svg  # 2D 视图导出缓存
-**/Plot_*.svg         # 绘图缓存
+
+# 2D/绘图导出缓存（如使用 TechDraw 或 Draft）
+**/Shape2DView_*.svg
+**/Plot_*.svg
+**/*.dxf.bak
 
 # 操作系统文件
 .DS_Store
@@ -27,19 +35,19 @@ desktop.ini
 **/*.swp
 **/*.swo
 
-# Python 相关（如果你有宏或脚本）
+# Python 相关（宏、脚本等）
 __pycache__/
 **/__pycache__/
 **/*.pyc
 **/*.pyo
 
-# IDE 文件夹
+# IDE 配置
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# 其他不建议提交的压缩包/二进制分发文件
+# 其他不建议提交的归档文件
 **/*.zip
 **/*.tar.gz
 **/*.rar
