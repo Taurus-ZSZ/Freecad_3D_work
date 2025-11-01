@@ -1,40 +1,45 @@
-# For PCBs designed using KiCad: https://www.kicad.org/
-# Format documentation: https://kicad.org/help/file-formats/
+# ========================
+# FreeCAD 项目忽略规则
+# 放在项目根目录，适用于所有子文件夹
+# ========================
 
-# Temporary files
-*.000
-*.bak
-*.bck
-*.kicad_pcb-bak
-*.kicad_sch-bak
-*-backups
-*-cache*
-*-bak
-*-bak*
+# 忽略 FreeCAD 自动生成的备份文件（所有层级）
+**/*.FCStd1
+**/*.FCStd2
+**/*.bak
+**/*.tmp
+**/*.log
+
+# 忽略缓存和中间文件（通常可重建）
+**/*.brep
+**/*.xfc
+**/Shape2DView_*.svg  # 2D 视图导出缓存
+**/Plot_*.svg         # 绘图缓存
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器临时文件
 *~
-~*
-_autosave-*
-\#auto_saved_files\#
-*.tmp
-*-save.pro
-*-save.kicad_pcb
-fp-info-cache
-~*.lck
-\#auto_saved_files#
+**/*~
+**/*.swp
+**/*.swo
 
-# Netlist files (exported from Eeschema)
-*.net
+# Python 相关（如果你有宏或脚本）
+__pycache__/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
 
-# Autorouter files (exported from Pcbnew)
-*.dsn
-*.ses
+# IDE 文件夹
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-# Exported BOM files
-*.xml
-*.csv
-
-# Archived Backups (KiCad 6.0)
-**/*-backups/*.zip
-
-# Local project settings
-*.kicad_prl
+# 其他不建议提交的压缩包/二进制分发文件
+**/*.zip
+**/*.tar.gz
+**/*.rar
