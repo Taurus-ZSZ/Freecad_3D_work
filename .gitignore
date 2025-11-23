@@ -11,6 +11,10 @@
 **/*.FCStd2
 **/*.bak
 
+# stl 文件
+**/*.stl
+**/*.step
+
 # 临时与日志文件
 **/*.tmp
 **/*.log
@@ -23,6 +27,7 @@
 **/Shape2DView_*.svg
 **/Plot_*.svg
 **/*.dxf.bak
+**/*.dxf
 
 # 操作系统文件
 .DS_Store
